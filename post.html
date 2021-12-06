@@ -114,7 +114,7 @@ var_dump($resp);
 
 <script type="text/javascript" language="javascript">
   function post_link_2(){
-const data = {"jsonrpc":"2.0","id":"1","method":"Player.Open","params":{"item":{"file":"/var/media/Toshiba4T/TVSendungen/2017-05-20 - Lola rennt.mp4"}}}
+const data = '{"jsonrpc":"2.0","id":"1","method":"Player.Open","params":{"item":{"file":"/var/media/Toshiba4T/TVSendungen/2017-05-20 - Lola rennt.mp4"}}}'
 
 fetch('http://kodi-wz-2.fritz.box:8080/jsonrpc', {
   method: 'POST', // The method
