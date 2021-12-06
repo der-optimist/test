@@ -107,22 +107,32 @@ var_dump($resp);
 </script>
 <a href="javascript:DoPost()">Click Here</A> 
 
-<h1>js2</h1>
+
+<h1>js3</h1>
+
+
 
 <script type="text/javascript" language="javascript">
-function post_link(data){
+  function post_link_2(){
+const data = {"jsonrpc":"2.0","id":"1","method":"Player.Open","params":{"item":{"file":"/var/media/Toshiba4T/TVSendungen/2017-05-20 - Lola rennt.mp4"}}}
 
-    $('#post_form').find('#form_input').val(data);
-    $('#post_form').submit();
-};
+fetch('http://kodi-wz-2.fritz.box:8080/jsonrpc', {
+  method: 'POST', // The method
+  mode: 'no-cors', // It can be no-cors, cors, same-origin
+  credentials: 'same-origin', // It can be include, same-origin, omit
+  headers: {
+    'Content-Type': 'application/json', // Your headers
+  },
+  body: JSON.stringify(data),
+}).then(returnedData => {
+  // Do whatever with returnedData
+}).catch(err => {
+  // In case it errors.
+});
+  }
 </script>
 
-   <form id="post_form" action="anywhere/you/want/" method="POST">
- {% csrf_token %}
-    <input id="form_input" type="hidden" value="" name="form_input">
-</form>
-
-<a href="javascript:{}" onclick="javascript:post_link('data');">post link is ready</a>
+<a href="javascript:post_link_2()">Click Here</A> 
 
 </body>
 </html>
