@@ -151,6 +151,31 @@ fetch('http://kodi-wz-2.fritz.box:8080/jsonrpc', {
 
 <a href="javascript:post_link_4()">Click Here</A> 
 
+<h1>js5</h1>
+
+<script src="atomic/atomic-master/dist/atomic.polyfills.min.js"></script>
+<script type="text/javascript" language="javascript">
+  function post_link_5(){
+    atomic('http://kodi-wz-2.fritz.box:8080/jsonrpc', {
+	method: 'POST',
+  body: '{"jsonrpc\\":\\"2.0\\",\\"id\\":\\"1\\",\\"method\\":\\"Player.Open\\",\\"params\\":{\\"item\\":{\\"file\\":\\"/var/media/Toshiba4T/TVSendungen/2017-05-20 - Lola rennt.mp4\\"}}}',
+  headers: {
+    "Content-Type": "application/json"
+  }
+})
+	.then(function (response) {
+		console.log(response.data); // xhr.responseText
+		console.log(response.xhr);  // full response
+	})
+	.catch(function (error) {
+		console.log(error.status); // xhr.status
+		console.log(error.statusText); // xhr.statusText
+	});
+  }
+</script>
+
+<a href="javascript:post_link_5()">Click Here</A>
+
 </body>
 </html>
 
