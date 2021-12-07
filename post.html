@@ -49,29 +49,16 @@
 </form>
 
 <h1>php1</h1>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>
-  function test1(){
-      $.ajax({url:"php1.php", success:function(result){
-      $("div").text(result);}
-  })
-  } 
-  </script>
-<button onclick="test1()"> Click </button>
-<div> </div>
+<iframe name="f1" id="f1"> </iframe>
+
+<a href='php1.php' target='f1'>Click </a>
 
 
 <h1>php2</h1>
 
-<script>
-  function test2(){
-      $.ajax({url:"php2.php", success:function(result){
-      $("div").text(result);}
-  })
-  } 
-  </script>
-<button onclick="test2()"> Click </button>
-<div> </div>
+<iframe name="f2" id="f2"> </iframe>
+
+<a href='php2.php' target='f2'>Click </a>
 
 <h1>js</h1>
 
