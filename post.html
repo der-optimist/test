@@ -50,28 +50,28 @@
 
 <h1>php1</h1>
 
-<script type="text/javascript">
-  function php1(){
-      var x = new XMLHttpRequest();
-      x.open("GET","php1.php",true);
-      x.send();
-      return false;
-  }
+<script>
+  function test1(){
+      $.ajax({url:"php1.php", success:function(result){
+      $("div").text(result);}
+  })
+  } 
   </script>
-<a href="#" onclick="php1()">link</a>
+<button onclick="test1()"> Click </button>
+<div> </div>
 
 
 <h1>php2</h1>
 
-<script type="text/javascript">
-  function php2(){
-      var x = new XMLHttpRequest();
-      x.open("GET","php2.php",true);
-      x.send();
-      return false;
-  }
+<script>
+  function test2(){
+      $.ajax({url:"php2.php", success:function(result){
+      $("div").text(result);}
+  })
+  } 
   </script>
-<a href="#" onclick="php2()">link</a>
+<button onclick="test2()"> Click </button>
+<div> </div>
 
 <h1>js</h1>
 
