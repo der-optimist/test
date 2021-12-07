@@ -51,25 +51,27 @@
 <h1>php1</h1>
 
 <script type="text/javascript">
-  function php1() {
-  $.get("php1.php");
-  alert("Error!");
-  return false;
+  function php1(){
+      var x = new XMLHttpRequest();
+      x.open("GET","php1.php",true);
+      x.send();
+      return false;
   }
-</script>
-<a href="javascript:php1()">Click Here</A> 
+  </script>
+<a href="#" onclick="php1()">link</a>
 
 
 <h1>php2</h1>
 
 <script type="text/javascript">
-  function php1() {
-  $.get("php2.php");
-  alert("Error!");
-  return false;
+  function php2(){
+      var x = new XMLHttpRequest();
+      x.open("GET","php2.php",true);
+      x.send();
+      return false;
   }
-</script>
-<a href="javascript:php2()">Click Here</A> 
+  </script>
+<a href="#" onclick="php2()">link</a>
 
 <h1>js</h1>
 
