@@ -159,6 +159,7 @@ fetch('http://kodi-wz-2.fritz.box:8080/jsonrpc', {
     atomic('http://kodi-wz-2.fritz.box:8080/jsonrpc', {
 	method: 'POST',
   body: '{"jsonrpc\\":\\"2.0\\",\\"id\\":\\"1\\",\\"method\\":\\"Player.Open\\",\\"params\\":{\\"item\\":{\\"file\\":\\"/var/media/Toshiba4T/TVSendungen/2017-05-20 - Lola rennt.mp4\\"}}}',
+  mode: 'no-cors',
   headers: {
     "Content-Type": "application/json"
   }
