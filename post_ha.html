@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <title>TV-Sendungen</title>
+</head>
+
+<body>
+<h1>Überschrift</h1>
+
+<script language="javascript"> 
+
+   function PostToHA(){
+    var url = "http://homeassistant.fritz.box:8123/api/states/input_text.play_on_kodi_wz";
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
+
+    xhr.setRequestHeader("Authorization", "Bearer ");
+    xhr.setRequestHeader("content-type", "application/json");
+
+    xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4) {
+          console.log(xhr.status);
+          console.log(xhr.responseText);
+       }};
+
+    var data = "{'state':'test1'}";
+
+    xhr.send(data);
+   }
+
+</script>
+<a href="javascript:PostToHA()">PostToHA</A> 
+
+</body>
+</html>
+
