@@ -9,8 +9,8 @@
 
 <script language="javascript"> 
 
-   function PostToHA(){
-    var url = "http://homeassistant.fritz.box:8123/api/states/input_text.play_on_kodi_wz";
+   function PostToHA(filepath){
+    var url = "http://homeassistant.fritz.box:8123/api/events/play_on_kodi";
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url);
@@ -24,13 +24,17 @@
           console.log(xhr.responseText);
        }};
 
-    var data = {'state':'test1'};
+    var data = `{
+      "filepath": filepath
+    }`;
 
     xhr.send(data);
    }
 
 </script>
-<a href="javascript:PostToHA()">PostToHA</A> 
+<a href="javascript:PostToHA('/var/media/Toshiba4T/TVSendungen/2017-05-20 - Lola rennt.mp4')">Lola rennt</A> 
+  <br>
+<a href="javascript:PostToHA('/var/media/Toshiba4T/TVSendungen/2017-05-20 - Lola brennt.mp4')"Lola brennt</A> 
 
 </body>
 </html>
